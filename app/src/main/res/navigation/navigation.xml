@@ -62,4 +62,8 @@
         android:id="@+id/aboutFragment"
         android:name="com.example.android.navigation.AboutFragment"
         android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.maxdexter.triviaapp.RulesFragment"
+        android:label="RulesFragment" />
 </navigation>
