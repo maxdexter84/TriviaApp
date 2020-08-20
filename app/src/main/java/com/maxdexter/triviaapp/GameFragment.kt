@@ -1,5 +1,6 @@
 package com.maxdexter.triviaapp
 
+import android.content.ContentValues.TAG
 import android.database.DatabaseUtils
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavAction
 import androidx.navigation.findNavController
 import com.maxdexter.triviaapp.databinding.FragmentGameBinding
 
@@ -78,10 +80,11 @@ class GameFragment : Fragment() {
                         setQuestion()
                         binding.invalidateAll()
                     } else {
-                        view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
+                        view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions, questionIndex))
+
                     }
                 } else {
-                    view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment2)
+                   view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment2())
                 }
             }
         }
